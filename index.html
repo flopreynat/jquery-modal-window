@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Display a special message for your visitors with an easy-to-code jQuery modal window</title>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.pack.js"></script>
+<script>
+$(document).ready(function() {	
+	$(function() {	
+		var WindowHeight = $(window).height();
+		var WindowWidth = $(window).width();
+		$('#dark').css({'width':WindowWidth,'height':WindowHeight});
+		$('#dark').fadeTo(2000,0.75);
+		$('#message').css('top',  WindowHeight/2-$('#message').height()/2);
+		$('#message').css('left', WindowWidth/2-$('#message').width()/2);	
+		$('#message').fadeIn(2000); 	
+	});	
+		$('.close').click(function() {
+		$('#dark').fadeOut();
+		$('#message').fadeOut();
+	});		
+		$('#dark').click(function () {
+		$('#dark').fadeOut();
+		$('#message').fadeOut();
+	});			
+});
+</script>
+
+<style>
+body			{width:800px; margin:50px auto 0px auto; font-family:"arial"; font-size: 0.7em; color: #afabac;}
+footer 			{color: #111;}
+a				{color:#797878;}
+h1				{font-size:48px; }
+h4 				{color: #111; }
+.style2 		{color: #cc8e2e; font-weight: bold; font-size: x-large; font-family: Verdana, Arial, Helvetica, sans-serif; }		
+#section 		{width: 170px; float: left; margin-left: 30px; color:#afabac; }
+#section img 	{border: none;}
+#createdby 		{position: absolute; left: 30px; top: 30px;}
+#createdby img 	{border:none;}
+#dark 			{display: none; background-color:#000; position:absolute; left:0; top:0; z-index:100;}
+#message 		{display:none; position:absolute; left:0; top:0; z-index:101; width:350px; height:250px; background-color:#FFFFFF; border:1px solid #333; -moz-border-radius: 20px; -webkit-border-radius : 20px; padding: 20px; color: #666666;}
+</style>
+
+</head>
+<body>
+<div id="message">
+	<a href="#"class="close"/><img src="images/accept.png" align="right" /></a>
+    <p><img src="images/mobilytics.jpg" width="222" height="41" /> 
+    <p><b>are proud to inform all their subscribers that the site has reached its 1,000,000th visit last Thursday</b>.</p> 
+    <p>A huge thank you to all the people who contributed to the content of <b>OUR</b> interface.</p>
+    <p>We will do our best to extend our already-wide subject panel. Keep on sending numerous valuable articles to our shared content section.</p>
+    <p><b>Once again, thanks to all!</b></p>
+    <p align="right">The Mobilytics Squad</p>
+</div>
+<div id="dark"></div>
+<div id="wrap">
+  <div id="header">
+	<h1 align="center"><img src="images/iphone.jpg" width="395" height="257" /></h1>
+  			<h1 align="center"><img src="images/mobilytics.jpg" width="334" height="62" /></h1>
+	    	<h4 align="center">You can't <span class="style2">[CTRL]</span> what you can't measure</h4>
+	</div>
+	<div id="nav" class="nodisplay">
+		<div id="section">
+				<h3><a href="#"><img src="images/about.jpg" /></a></h3>
+			<p>Who we are, where we are, what this company is about</p>
+  		</div>
+		<div id="section">
+				<h3><a href="#"><img src="images/services.jpg" /></a></h3>
+			  <p>What we offer as services in our expertise areas.</p>
+		</div>
+		<div id="section">
+				<h3><a href="#"><img src="images/blog.jpg" /></a></h3>
+			  <p>Things we want to share with our customers &amp; leads</p>
+		</div>
+		<div id="section">
+				<h3><a href="#"><img src="images/contact.jpg" /></a></h3>
+			  <p>Where you can get in touch with us (sales to support)</p>
+		</div>
+	</div>
+</div>
+<p align="center">&nbsp;</p>
+<div id="footer" class="nodisplay"><p align="center">All rights reserved to Mobilytics - 2010</p></div>
+
+</body>
+</html>
